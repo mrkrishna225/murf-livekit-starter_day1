@@ -2,7 +2,13 @@
 
 > Ultra-low-latency real-time conversational voice AI assistant powered by Murf Falcon TTS (55ms latency), Deepgram STT, and LiveKit WebRTC.
 
-### 🛠️ Tech Stack & Topics
+### Tech Stack & Topics
+`voice-ai` | `livekit` | `murf-ai` | `deepgram` | `webrtc` | `real-time` | `python` | `typescript`
+
+
+> Ultra-low-latency real-time conversational voice AI assistant powered by Murf Falcon TTS (55ms latency), Deepgram STT, and LiveKit WebRTC.
+
+###  Tech Stack & Topics
 `voice-ai` `livekit` `murf-ai` `deepgram` `webrtc` `real-time` `python` `typescript`
 
 
@@ -26,11 +32,11 @@ Build a production voice AI agent in 5 minutes. Powered by the fastest TTS on th
 
 ```mermaid
 flowchart LR
-    A[🎙️ User speaks] -->|audio| B[Deepgram STT]
+    A[ User speaks] -->|audio| B[Deepgram STT]
     B -->|text| C[LLM]
     C -->|response text| D[Murf Falcon TTS]
     D -->|audio| E[LiveKit]
-    E -->|stream| F[🔊 User hears]
+    E -->|stream| F[ User hears]
 
     style A fill:#444441,stroke:#888780,color:#fff
     style B fill:#185FA5,stroke:#85B7EB,color:#fff
@@ -239,24 +245,24 @@ Murf Falcon and LiveKit handle audio format internally. For advanced options, se
 
 ```
 murf-livekit-starter/
-├── backend/                 # Python voice agent (LiveKit Agents + Murf Falcon)
-│   ├── src/
-│   │   └── agent.py         # Agent entrypoint, pipeline (STT/LLM/TTS), system prompt
-│   ├── tests/               # Agent tests
-│   ├── .env.example         # Backend env template
-│   ├── pyproject.toml       # Python deps (uv)
-│   └── railway.toml         # Railway deploy config
-├── frontend/                # Next.js UI for voice sessions
-│   ├── app/
-│   │   ├── page.tsx         # Main page
-│   │   └── api/token/       # LiveKit token endpoint (dev)
-│   ├── components/          # UI (agents-ui, app config, theme)
-│   ├── app-config.ts        # Branding, title, button text, accent
-│   ├── .env.example         # Frontend env template
-│   └── package.json         # Node deps (pnpm)
-├── start_app.sh             # Start LiveKit + backend + frontend (macOS/Linux)
-├── start_app.ps1            # Start LiveKit + backend + frontend (Windows)
-├── README.md                # This file
+ backend/                 # Python voice agent (LiveKit Agents + Murf Falcon)
+    src/
+       agent.py         # Agent entrypoint, pipeline (STT/LLM/TTS), system prompt
+    tests/               # Agent tests
+    .env.example         # Backend env template
+    pyproject.toml       # Python deps (uv)
+    railway.toml         # Railway deploy config
+ frontend/                # Next.js UI for voice sessions
+    app/
+       page.tsx         # Main page
+       api/token/       # LiveKit token endpoint (dev)
+    components/          # UI (agents-ui, app config, theme)
+    app-config.ts        # Branding, title, button text, accent
+    .env.example         # Frontend env template
+    package.json         # Node deps (pnpm)
+ start_app.sh             # Start LiveKit + backend + frontend (macOS/Linux)
+ start_app.ps1            # Start LiveKit + backend + frontend (Windows)
+ README.md                # This file
 ```
 
 For deeper documentation on each part, see:
