@@ -1,4 +1,10 @@
-# Voice Agent Starter — Powered by Murf Falcon
+# Real-Time Voice AI Agent — LiveKit WebRTC & Murf Falcon TTS
+
+> Ultra-low-latency real-time conversational voice AI assistant powered by Murf Falcon TTS (55ms latency), Deepgram STT, and LiveKit WebRTC.
+
+### 🛠️ Tech Stack & Topics
+`voice-ai` `livekit` `murf-ai` `deepgram` `webrtc` `real-time` `python` `typescript`
+
 
 Build a production voice AI agent in 5 minutes. Powered by the fastest TTS on the market - swap the system prompt to build anything from customer support to language tutors.
 
