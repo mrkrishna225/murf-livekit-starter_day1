@@ -1,19 +1,25 @@
 # Voice Agent (Murf + LiveKit)
 
-A real-time voice AI agent built on top of the [Murf LiveKit starter](https://github.com/murf-ai/murf-livekit-starter).
+A real-time voice AI agent built on top of the
+[Murf LiveKit starter](https://github.com/murf-ai/murf-livekit-starter).
 
-The pipeline: user speaks -> Deepgram transcribes -> LLM generates a response -> Murf Falcon
-synthesizes speech -> LiveKit streams it back. All over WebRTC, so latency stays low.
+User speaks -> Deepgram transcribes -> LLM generates a response -> Murf Falcon synthesizes
+speech -> LiveKit streams it back over WebRTC.
 
 ## Architecture
 
 ```
-User speaks -> [Deepgram STT] -> [LLM] -> [Murf Falcon TTS] -> [LiveKit] -> User hears
+User speaks --> [Deepgram STT] --> [LLM (Gemini/OpenAI)] --> [Murf Falcon TTS] --> [LiveKit WebRTC] --> User hears
 ```
+
+## What I changed from the starter
+
+- Customized the system prompt for a specific use case
+- Configured voice selection and LLM provider
 
 ## Setup
 
-You'll need API keys for LiveKit, Murf, Deepgram, and either Google (Gemini) or OpenAI.
+You'll need API keys for: LiveKit, Murf, Deepgram, and either Google (Gemini) or OpenAI.
 
 ```bash
 # Backend
@@ -27,7 +33,20 @@ pnpm install
 pnpm dev
 ```
 
-Or use the all-in-one script: `./start_app.ps1` (Windows) / `./start_app.sh` (Mac/Linux)
+Or use the all-in-one script:
+- Windows: `.\start_app.ps1`
+- Mac/Linux: `./start_app.sh`
 
-See the original [Murf starter README](https://github.com/murf-ai/murf-livekit-starter) for
-full setup docs, deployment guides, and voice configuration.
+## Project structure
+
+```
+backend/
+  src/agent.py       # Agent entry point — system prompt, STT/LLM/TTS config
+  pyproject.toml     # Python deps (uv)
+frontend/
+  app/page.tsx       # Main page
+  components/        # UI components
+  app-config.ts      # Branding and button text
+```
+
+Full docs in the original [Murf starter repo](https://github.com/murf-ai/murf-livekit-starter).
